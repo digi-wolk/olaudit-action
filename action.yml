@@ -1,17 +1,20 @@
 name: OSS License Auditor
 description: Github Action for OSS license auditor (olAudit)
 author: DigiWolk
+
 branding:
   icon: check-circle
   color: yellow
+
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://prazian/oss-license-audit:latest'
   args:
     - '--ci'
     - '--path ' ${{ inputs.path }}
     - ${{ if eq(inputs.onlyRisky, 'true') }}'--only-risky'${{ endif }}
     - ${{ if eq(inputs.failOnRisky, 'true') }}'--fail-on-risky'${{ endif }}
+
 inputs:
   path:
     description: 'Path to check'
