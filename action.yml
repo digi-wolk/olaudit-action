@@ -1,0 +1,26 @@
+name: OSS License Auditor
+description: Github Action for OSS license auditor (olAudit)
+author: DigiWolk
+branding:
+  icon: check-circle
+  color: yellow
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '--ci'
+    - '--path ' ${{ inputs.path }}
+    - ${{ if eq(inputs.onlyRisky, 'true') }}'--only-risky'${{ endif }}
+    - ${{ if eq(inputs.failOnRisky, 'true') }}'--fail-on-risky'${{ endif }}
+inputs:
+  path:
+    description: 'Path to check'
+    required: true
+    default: '.'
+    deprecationMessage: 'Specify the path to check. Default is current directory.'
+  onlyRisky:
+    description: 'Only risky licenses'
+    required: false
+  failOnRisky:
+    description: 'Fail on risky licenses'
+    required: false
