@@ -56,6 +56,8 @@ In this example we used `GITHUB_PAT` as the secret name.
 
 | Name | Description                        | Required | Default |
 |------|------------------------------------|----------|---------|
-| path | Path to the project root directory | true     | .       |
+| path | Path to the project root directory | yes      | .       |
+| onlyRisky | Only show risky licenses | no       | false |
+| failOnRisky | Fail if risky licenses are found | no       | false |
 
 
