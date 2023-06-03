@@ -4,7 +4,7 @@ author: 'DigiWolk - digiwolk.com'
 
 branding:
   icon: check-circle
-  color: yellow
+  color: green
 
 inputs:
   path:
