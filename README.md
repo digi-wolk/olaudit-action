@@ -1,6 +1,8 @@
 # About
 
-Github Action for the [OSS license auditor](https://github.com/digi-wolk/oss-license-auditor) project (`olAudit`)
+Github Action for the [OSS license auditor](https://github.com/digi-wolk/oss-license-auditor) project (`olAudit`).
+
+For documentations please refer to the main repository.
 
 # Usage
 
