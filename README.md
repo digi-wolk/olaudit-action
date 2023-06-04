@@ -1,5 +1,8 @@
 <div align="center">
 
+<img src="assets/logo/logo-txt.svg" width="250">
+<br /><br />
+
 **Status of this repo**
 
 [![License](https://img.shields.io/github/license/digi-wolk/olaudit-action?color=blue&label=License&style=flat-square)](https://github.com/digi-wolk/olaudit-action/blob/main/LICENSE.md)
