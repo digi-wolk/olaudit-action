@@ -56,10 +56,10 @@ In this example we used `GITHUB_PAT` as the secret name.
 
 # Inputs
 
-| Name        | Description                        | Required | Default          |
-|-------------|------------------------------------|----------|------------------|
-| path        | Path to the project root directory | yes      | . (current path) |
-| onlyRisky   | Only show risky licenses           | no       | false            |
-| failOnRisky | Fail if risky licenses are found   | no       | false            |
-
+| Name                 | Description                                                | Required | Default          |
+|----------------------|------------------------------------------------------------|----------|------------------|
+| path                 | Path to the project root directory                         | yes      | . (current path) |
+| only-risky           | Only show risky licenses                                   | no       | false            |
+| fail-on-risky-fail   | Fail if risky licenses that are supposed to fail are found | no       | false            |
+| comment-on-github-pr | Comment findings on the Pull Request on Github             | no       | false            |
 
