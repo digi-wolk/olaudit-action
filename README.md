@@ -1,24 +1,8 @@
 <div align="center">
 
-<img src="assets/logo/logo-txt.svg" width="250">
-<br /><br />
-
-**Status of this repo**
-
 [![License](https://img.shields.io/github/license/digi-wolk/olaudit-action?color=blue&label=License&style=flat-square)](https://github.com/digi-wolk/olaudit-action/blob/main/LICENSE.md)
 [![Last commit](https://img.shields.io/github/last-commit/digi-wolk/olaudit-action.svg?color=blue&style=flat-square)](https://github.com/digi-wolk/olaudit-action/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/digi-wolk/olaudit-action?color=blue&style=flat-square)](https://github.com/digi-wolk/olaudit-action/graphs/contributors)
-
-
-**Status of the main repo**
-
-[![Test status](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-tests.yml)
-[![Code quality status](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-code-quality.yml/badge.svg?branch=master)](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-code-quality.yml)
-[![goSec security status](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-security-checks.yml/badge.svg?branch=master)](https://github.com/digi-wolk/oss-license-auditor/actions/workflows/run-security-checks.yml)
-
-[![License](https://img.shields.io/github/license/digi-wolk/oss-license-auditor?color=blue&label=License&style=flat-square)](https://github.com/digi-wolk/oss-license-auditor/blob/master/LICENSE.md)
-[![Last commit](https://img.shields.io/github/last-commit/digi-wolk/oss-license-auditor.svg?color=blue&style=flat-square)](https://github.com/digi-wolk/oss-license-auditor/commits/master)
-[![Contributors](https://img.shields.io/github/contributors/digi-wolk/oss-license-auditor?color=blue&style=flat-square)](https://github.com/digi-wolk/oss-license-auditor/graphs/contributors)
 
 </div>
 
