@@ -1,3 +1,11 @@
+<div align="center">
+
+[![License](https://img.shields.io/github/license/digi-wolk/olaudit-action?color=blue&label=License&style=flat-square)](https://github.com/digi-wolk/olaudit-action/blob/main/LICENSE.md)
+[![Last commit](https://img.shields.io/github/last-commit/digi-wolk/olaudit-action.svg?color=blue&style=flat-square)](https://github.com/digi-wolk/olaudit-action/commits/main)
+[![Contributors](https://img.shields.io/github/contributors/digi-wolk/olaudit-action?color=blue&style=flat-square)](https://github.com/digi-wolk/olaudit-action/graphs/contributors)
+
+</div>
+
 # About
 
 Github Action for the [OSS license auditor](https://github.com/digi-wolk/oss-license-auditor) project (`olAudit`).
@@ -9,14 +17,14 @@ For documentations please refer to the main repository.
 Example (uses Github's default token, scoped to the repository that runs it)
 
 ```yaml
-name: OSS License Auditor
+name: Audit licenses
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master ] # Update to your branch name
 
 jobs:
-  oss-license-auditor:
+  audit-licenses:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,14 +42,14 @@ You can override the value with a custom personal access token (PAT) if it needs
 Example with Personal Access Token (PAT):
 
 ```yaml
-name: OSS License Auditor
+name: Audit licenses
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master ] # Update to your branch name
 
 jobs:
-  oss-license-auditor:
+  audit-licenses:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
