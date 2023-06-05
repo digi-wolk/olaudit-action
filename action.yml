@@ -25,6 +25,14 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://prazian/oss-license-audit:0.0.1'
+  env:
+    # This information is needed for commenting on the Pull Request on Github.
+    # The default Github token used by Github Action is limited to the scope of the current repository, and it will be
+    # invalidated after the job is done.
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+    GITHUB_REPOSITORY: ${{ github.repository }}
+    GITHUB_PULL_REQUEST_NUMBER: ${{ github.event.number }}
   args:
     - '--ci'
     - '--path ' ${{ inputs.path }}
