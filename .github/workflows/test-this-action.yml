@@ -1,0 +1,45 @@
+name: Test this Action
+on:
+  pull_request:
+
+jobs:
+  test-package-lock-json:
+    name: Test with package-lock.json
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: checkout puppeteer repo
+        uses: actions/checkout@v3
+        with:
+          repository: puppeteer/puppeteer
+          ref: main
+          path: test_dir
+      - name: Test Action
+        id: run_action
+        uses: ./
+        with:
+          path: test_dir
+          comment-on-pr: true
+          verbose: true
+          github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
+  test-go-mod:
+    name: Test with go.mod
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: checkout google/wire repo
+        uses: actions/checkout@v3
+        with:
+          repository: google/wire
+          ref: main
+          path: test_dir
+      - name: Test Action
+        id: run_action
+        uses: ./
+        with:
+          path: test_dir
+          comment-on-pr: true
+          verbose: true
+          github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}

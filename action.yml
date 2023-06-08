@@ -1,0 +1,43 @@
+name: 'OSS License Auditor'
+author: '@prazian'
+description: 'Runs the OSS license auditor (olAudit) to find risky licenses in your code'
+
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  path:
+    description: 'Path to check'
+    required: true
+    default: '.'
+  only-risky:
+    description: 'Print only risky licenses'
+    required: false
+    default: ''
+  fail-on-risky-fail:
+    description: 'Fail if risky licenses that are supposed to fail are found'
+    required: false
+    default: ''
+  comment-on-pr:
+    description: 'Comment on the Pull Request'
+    required: false
+    default: ''
+  verbose:
+    description: 'Show verbose output'
+    required: false
+    default: ''
+  pull-request-id:
+    description: 'Pull Request ID'
+    required: false
+    default: ${{ github.event.number }}
+  github-token:
+    description: 'GitHub Token'
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: docker
+  image: docker://prazian/oss-license-audit:0.0.1
+  env:
+    GITHUB_TOKEN: ${{ inputs.github-token }}
+
