@@ -6,6 +6,10 @@
 
 </div>
 
+<div align="center">
+Screenshots will be added here later
+</div>
+
 # About
 
 Github Action for the [OSS license auditor](https://github.com/digi-wolk/oss-license-auditor) project (`olAudit`).
