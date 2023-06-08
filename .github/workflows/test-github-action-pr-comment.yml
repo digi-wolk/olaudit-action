@@ -1,0 +1,41 @@
+name: Test Action
+on:
+  pull_request:
+
+jobs:
+  test-package-lock-json:
+    name: Test with package-lock.json
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        id: checkout
+        uses: actions/checkout@v3
+      - name: Test package-lock.json
+        run: |
+          git clone git@github.com:puppeteer/puppeteer.git test_dir
+      - name: Run action
+        id: run_action
+        uses: ./
+        with:
+          path: test_dir
+          comment-on-github-pr: true
+      - name: log action output
+        run: echo $
+  test-go-mod:
+    name: Test with go.mod
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        id: checkout
+        uses: actions/checkout@v3
+      - name: Test go.mod
+        run: |
+          git clone https://github.com/google/wire test_dir
+      - name: Run action
+        id: run_action
+        uses: ./
+        with:
+          path: test_dir
+          comment-on-github-pr: true
+      - name: log action output
+        run: echo $
