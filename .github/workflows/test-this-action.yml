@@ -17,14 +17,12 @@ jobs:
           path: test_dir
       - name: Test Action
         id: run_action
-        uses: digi-wolk/olaudit-action@test/show-how-it-works
+        uses: ./
         with:
           path: test_dir
           comment-on-pr: true
           verbose: true
           github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
-      - name: log action output
-        run: echo $
   test-go-mod:
     name: Test with go.mod
     runs-on: ubuntu-latest
@@ -43,5 +41,5 @@ jobs:
         with:
           path: test_dir
           comment-on-pr: true
-      - name: log action output
-        run: echo $
+          verbose: true
+          github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
