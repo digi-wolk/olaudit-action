@@ -1,26 +1,10 @@
 name: 'OSS License Auditor'
-description: 'Runs the OSS license auditor (olAudit) to find risky licenses in your code'
 author: '@prazian'
+description: 'Runs the OSS license auditor (olAudit) to find risky licenses in your code'
 
 branding:
   icon: check-circle
   color: green
-
-inputs:
-  path:
-    description: 'Path to check'
-    required: true
-    default: '.'
-    deprecationMessage: 'Specify the path to check. Default is current directory.'
-  only-risky:
-    description: 'Only risky licenses'
-    required: false
-  fail-on-risky-fail:
-    description: 'Fail if risky licenses that are supposed to fail are found'
-    required: false
-  comment-on-github-pr:
-    description: 'Comment findings on the Pull Request on Github'
-    required: false
 
 runs:
   using: 'docker'
@@ -39,3 +23,19 @@ runs:
     - ${{ if eq(inputs.only-risky, 'true') }}'--only-risky'${{ endif }}
     - ${{ if eq(inputs.fail-on-risky-fail, 'true') }}'--fail-on-risky'${{ endif }}
     - ${{ if eq(inputs.comment-on-github-pr, 'true') }}'--comment-on-github-pr'${{ endif }}
+
+inputs:
+  path:
+    description: 'Path to check'
+    required: true
+    default: '.'
+    deprecationMessage: 'Specify the path to check. Default is current directory.'
+  only-risky:
+    description: 'Only risky licenses'
+    required: false
+  fail-on-risky-fail:
+    description: 'Fail if risky licenses that are supposed to fail are found'
+    required: false
+  comment-on-github-pr:
+    description: 'Comment findings on the Pull Request on Github'
+    required: false
