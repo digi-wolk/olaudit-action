@@ -14,13 +14,14 @@ jobs:
         with:
           repository: puppeteer/puppeteer
           ref: main
-          path: test_dir
+          path: puppeteer
       - name: Test Action
         id: run_action
         uses: ./
         with:
-          path: test_dir
+          path: puppeteer
           comment-on-pr: true
+          only-risky: true
           verbose: true
           github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
   test-go-mod:
@@ -34,12 +35,34 @@ jobs:
         with:
           repository: google/wire
           ref: main
-          path: test_dir
+          path: google-wire
       - name: Test Action
         id: run_action
         uses: ./
         with:
-          path: test_dir
+          path: google-wire
           comment-on-pr: true
+          only-risky: true
+          verbose: true
+          github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
+  test-pnpm:
+    name: Test with pnpm-lock.yaml
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: checkout google/wire repo
+        uses: actions/checkout@v3
+        with:
+          repository: vuejs/core
+          ref: main
+          path: vuejs-core
+      - name: Test Action
+        id: run_action
+        uses: ./
+        with:
+          path: vuejs-core
+          comment-on-pr: true
+          only-risky: true
           verbose: true
           github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
