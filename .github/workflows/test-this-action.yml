@@ -45,7 +45,7 @@ jobs:
           only-risky: true
           verbose: true
           github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
-  test-pnpm:
+  test-pnpm-lock-yaml:
     name: Test with pnpm-lock.yaml
     runs-on: ubuntu-latest
     steps:
@@ -62,6 +62,27 @@ jobs:
         uses: ./
         with:
           path: vuejs-core
+          comment-on-pr: true
+          only-risky: true
+          verbose: true
+          github-token: ${{ secrets.GH_PR_COMMENTER_TOKEN }}
+  test-yarn-lock:
+    name: Test with yarn.lock
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: checkout google/wire repo
+        uses: actions/checkout@v3
+        with:
+          repository: facebook/react-native
+          ref: main
+          path: react-native
+      - name: Test Action
+        id: run_action
+        uses: ./
+        with:
+          path: react-native
           comment-on-pr: true
           only-risky: true
           verbose: true
