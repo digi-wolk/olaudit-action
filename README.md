@@ -5,7 +5,7 @@
 [![Contributors](https://img.shields.io/github/contributors/digi-wolk/olaudit-action?color=blue&style=flat-square)](https://github.com/digi-wolk/olaudit-action/graphs/contributors)
 
 
-![olAudit Github PR Comment.png](assets/screenshots/olaudit-github-pr-comment-1.png)
+![olAudit Github PR Comment.png](assets/screenshots/olaudit-github-pr-comment-1.png?v=1)
 
 </div>
 
