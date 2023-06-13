@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: OSS License Auditor
-        uses: digi-wolk/olaudit@v1
+        uses: digi-wolk/olaudit-action@v1
         with:
           path: .
           comment-on-pr: true
