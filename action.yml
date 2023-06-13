@@ -37,7 +37,7 @@ inputs:
     default: ${{ github.token }}
 runs:
   using: docker
-  image: docker://prazian/oss-license-audit:0.0.1
+  image: docker://prazian/oss-license-audit:0.1.0
   env:
     GITHUB_TOKEN: ${{ inputs.github-token }}
 
