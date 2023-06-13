@@ -131,3 +131,4 @@ Then move the major version tag (for example v1) to point to the Git ref of the 
 git tag -fa v1 -m "Major release: v1"
 git push origin v1 --force
 ```
+Then remember to push to Github Marketplace by releasing manually from the GUI.
